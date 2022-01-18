@@ -22,7 +22,7 @@ function City(props) {
 
 
 	return (
-		<Link to={`/${props.cityName}`} className='link' onClick={props.ChangeMenuActive}>						{/* Esto es parte del "react router". O sea, sirve para cambiar de link. Al hacer click aquí, me redirijo al link selecionado. Recordar que este cambia segun la ciudad tipeada ej: "http://localhost:3000/salto" */}
+		<Link to={`/clima/${props.cityName}`} className='link' onClick={props.ChangeMenuActive}>						{/* Esto es parte del "react router". O sea, sirve para cambiar de link. Al hacer click aquí, me redirijo al link selecionado. Recordar que este cambia segun la ciudad tipeada ej: "http://localhost:3000/salto" */}
 			<div id='parentBox' className="city" onClick={cityListRender}>
 				<p id='text' className='city-name'>{props.cityName}</p>
 				<span id='arrow' className="material-icons arrow-icon">keyboard_arrow_right</span>

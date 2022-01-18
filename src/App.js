@@ -350,7 +350,7 @@ function App() {
 		<div className="App">
 			<Router>																		{/* Esto es parte del "react router". O sea, sirve para cambiar de link		// ¿Por que pongo dos rutas que muestran la misma página cuando esto se podria hacer con una sola? Basicamente esto me soluciona dos problemas. El primero es que cuando se renderizan nuevas imagenes, la pagina se recarga (así funcionan las descargas de links/imagenes) y esto me lleva al segundo error, el cual se va a activar la geolocalizacion automaticamente cuando se habra la página. Al tener una página principal, puedo hacer que solamente en esta se ejecute la geolocalizacion de forma automatica apenas habra la página (ya que solamente la página inicial tiene el props "autoGeolocation={getGeolocation}". y cuando seleccionemos una ciudad, se abrira una nueva página cuyo link tenda el nombre de la ciudad ej: "http://localhost:3000/salto" y se cargaran las imagenes de esta ciudad, ademas este segundo link no tiene la opcion de mostar la geolocalizacion de forma automatica devido a que no tiene el props autoGeolocation={getGeolocation} */}
 
-				<Route exact path="/" render={() => {										{/* Esto es parte del "react router". O sea, sirve para cambiar de link.  Esta ruta representa la la página inicial. O sea, "http://localhost:3000/" */}																					
+				<Route exact path="/clima/" render={() => {										{/* Esto es parte del "react router". O sea, sirve para cambiar de link.  Esta ruta representa la la página inicial. O sea, "http://localhost:3000/" */}																					
 					return(
 						<div>
 							<WeatherFrecastpPage autoGeolocation={getGeolocation} menuActive={menuActive} ChangeMenuActive={ChangeMenuActive} cityName={cityName} setCityName={setCityName} cityInfo={cityInfo}  getGeolocation={getGeolocation} link={link} items={items} fetchingCity={fetchingCity} setLink={setLink} error={error} temperatureScale={temperatureScale} setTemperatureScale={setTemperatureScale} changeTemperature={changeTemperature}/>
@@ -358,7 +358,7 @@ function App() {
 					)}}>										
 				</Route>
 
-				<Route  path={`/${link}`} render={() => {									{/* Lo mismo que lo anterior, pero en este caso la página de esta ruta representa depende la ciudad tipeada. Ejemplo: "http://localhost:3000/salto" */}
+				<Route  path={`/clima/${link}`} render={() => {									{/* Lo mismo que lo anterior, pero en este caso la página de esta ruta representa depende la ciudad tipeada. Ejemplo: "http://localhost:3000/salto" */}
 					return (
 						<div>
 							<WeatherFrecastpPage menuActive={menuActive} ChangeMenuActive={ChangeMenuActive} cityName={cityName} setCityName={setCityName} cityInfo={cityInfo}  getGeolocation={getGeolocation} link={link} items={items} fetchingCity={fetchingCity} setLink={setLink} error={error} temperatureScale={temperatureScale} setTemperatureScale={setTemperatureScale} changeTemperature={changeTemperature}/>										

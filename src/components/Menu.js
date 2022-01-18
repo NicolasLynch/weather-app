@@ -64,7 +64,7 @@ function Menu(props) {
 			<form id='form' className="form" onChange={getCityName} onSubmit={simulateClick}>
 				<span className="material-icons search-icon">search</span>
 				<input id="input" className='input' type="text" placeholder="search location"/>
-				<Link to={`/${props.cityName}`} className='link' onClick={props.ChangeMenuActive}>									{/* Esto es parte del "react router". O sea, sirve para cambiar de link. Al hacer click aquí, me redirijo al link selecionado. Recordar que este cambia segun la ciudad tipeada ej: "http://localhost:3000/salto" */}
+				<Link to={`/clima/${props.cityName}`} className='link' onClick={props.ChangeMenuActive}>									{/* Esto es parte del "react router". O sea, sirve para cambiar de link. Al hacer click aquí, me redirijo al link selecionado. Recordar que este cambia segun la ciudad tipeada ej: "http://localhost:3000/salto" */}
 					<div id='searchButton' className='button' onClick={changeCity} >Search</div>
 				</Link>
 			</form>

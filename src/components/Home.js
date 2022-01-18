@@ -9,7 +9,7 @@ function Home(props) {
 		<div className='Home'>
 			<div className='buttons'>
 				<div className='search-button' onClick={props.ChangeMenuActive}>Search for place</div>
-				<Link to="/">																										{/* Esto es parte del "react router". O sea, sirve para cambiar de link. Al hacer click aquí, me redirijo al link selecionado. Recordar que este cambia segun la ciudad tipeada ej: "http://localhost:3000/salto" */}
+				<Link to="/clima/">																										{/* Esto es parte del "react router". O sea, sirve para cambiar de link. Al hacer click aquí, me redirijo al link selecionado. Recordar que este cambia segun la ciudad tipeada ej: "http://localhost:3000/salto" */}
 					<div className='gps-button' onClick={props.getGeolocation}>
 						<img src={`./assets/icons/gps.svg`} alt='GPS icon' className='gps-icon'></img>								{/* ////// */}
 					</div>
