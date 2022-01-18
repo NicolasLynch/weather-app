@@ -316,7 +316,7 @@ function App() {
 		if ((window.location.pathname.slice(1)).replace(/%20/g, ' ')){				// window.location representa el  dominio Ej: "http://localhost:3000/salto".	// window.location.pathname es la ultima parte de ese dominio (incluido el slash) ej: /salto		// .slice(1) me quita el primer diguito del "string", de esta manera quito el slash y me queda solamente el nombre de la ciudad			// .replace(/%20/g, ' ') reemplaza el "%20" por un " " (espacio basio), esto se debe a que los URL en vez de tener un espacio, usan el %20. Esto es necesario para cuando dominio tiene una ciudad cuyo nombre es de dos palabras por ejemplo "/buenos%20aires" la cual convertiremos en "buenos aires". De esta manera la API puede buscarla. Esa cosa rara del "/ /g" donde adentro esta el %20 sirve para reemplazar a todos los %20 que se encuentren, sin esto solamente reemplazaria al primero     		// ¿Cual es la función del if? Basicamente es preguntar si existe esa ciudad como palabra. En caso de ser true, se ejecuta lo de abajo. Esto es nesesario porque la página inicial su dominio es http://localhost:3000/, esto quiere decir que no hay existe una ciudad excrita, y si se ejecutara este esta funcion sin este if, esto me traeria errores  	
 			fetchingCity((window.location.pathname.slice(1)).replace(/%20/g, ' '));
 			setLink((window.location.pathname.slice(1)).replace(/%20/g, ' '));
-			console.log(window.location.substring(window.location.lastIndexOf('/') + 1))
+			console.log(window.location.href.substring(window.location.href.lastIndexOf('/') + 1))
 		}
 	}, [window.location.pathname]);
 
