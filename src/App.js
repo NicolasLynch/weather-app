@@ -348,6 +348,7 @@ function App() {
 
 	return (
 		<div className="App">
+			<p>Perro</p>
 			<Router>																		{/* Esto es parte del "react router". O sea, sirve para cambiar de link		// ¿Por que pongo dos rutas que muestran la misma página cuando esto se podria hacer con una sola? Basicamente esto me soluciona dos problemas. El primero es que cuando se renderizan nuevas imagenes, la pagina se recarga (así funcionan las descargas de links/imagenes) y esto me lleva al segundo error, el cual se va a activar la geolocalizacion automaticamente cuando se habra la página. Al tener una página principal, puedo hacer que solamente en esta se ejecute la geolocalizacion de forma automatica apenas habra la página (ya que solamente la página inicial tiene el props "autoGeolocation={getGeolocation}". y cuando seleccionemos una ciudad, se abrira una nueva página cuyo link tenda el nombre de la ciudad ej: "http://localhost:3000/salto" y se cargaran las imagenes de esta ciudad, ademas este segundo link no tiene la opcion de mostar la geolocalizacion de forma automatica devido a que no tiene el props autoGeolocation={getGeolocation} */}
 
 				<Route exact path="/clima/" render={() => {										{/* Esto es parte del "react router". O sea, sirve para cambiar de link.  Esta ruta representa la la página inicial. O sea, "http://localhost:3000/" */}																					
