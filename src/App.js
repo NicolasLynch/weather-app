@@ -310,25 +310,17 @@ function App() {
 
 
 
-	//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX								// Esto podria probocar algun error si lo paso a una página de hosting
+	
 	// _____Obtener la la ciudad segun el su domio web:_____  						// Esto es util para obtener la información de una ciudad cuando copie y pegue un dominio, ya que de lo contrario, no se renderiazara ninguna página Ej: "http://localhost:3000/salto" 
 	useEffect(() => {
-		// if ((window.location.pathname.slice(1)).replace(/%20/g, ' ')){				// window.location representa el  dominio Ej: "http://localhost:3000/salto".	// window.location.pathname es la ultima parte de ese dominio (incluido el slash) ej: /salto		// .slice(1) me quita el primer diguito del "string", de esta manera quito el slash y me queda solamente el nombre de la ciudad			// .replace(/%20/g, ' ') reemplaza el "%20" por un " " (espacio basio), esto se debe a que los URL en vez de tener un espacio, usan el %20. Esto es necesario para cuando dominio tiene una ciudad cuyo nombre es de dos palabras por ejemplo "/buenos%20aires" la cual convertiremos en "buenos aires". De esta manera la API puede buscarla. Esa cosa rara del "/ /g" donde adentro esta el %20 sirve para reemplazar a todos los %20 que se encuentren, sin esto solamente reemplazaria al primero     		// ¿Cual es la función del if? Basicamente es preguntar si existe esa ciudad como palabra. En caso de ser true, se ejecuta lo de abajo. Esto es nesesario porque la página inicial su dominio es http://localhost:3000/, esto quiere decir que no hay existe una ciudad excrita, y si se ejecutara este esta funcion sin este if, esto me traeria errores  	
-			// fetchingCity((window.location.pathname.slice(1)).replace(/%20/g, ' '));
-			// setLink((window.location.pathname.slice(1)).replace(/%20/g, ' '));
-		// }
-
-		if (window.location.pathname !== '/clima/') {
-			fetchingCity((window.location.href.substring(window.location.href.lastIndexOf('/') + 1)).replace(/%20/g, ' '))
+		if (window.location.pathname !== '/weather-app/') {
+			fetchingCity((window.location.href.substring(window.location.href.lastIndexOf('/') + 1)).replace(/%20/g, ' '))	// window.location representa el  dominio Ej: "http://localhost:3000/salto".	// window.location.pathname es la ultima parte de ese dominio (incluido el slash) ej: /salto		// .slice(1) me quita el primer diguito del "string", de esta manera quito el slash y me queda solamente el nombre de la ciudad			// .replace(/%20/g, ' ') reemplaza el "%20" por un " " (espacio basio), esto se debe a que los URL en vez de tener un espacio, usan el %20. Esto es necesario para cuando dominio tiene una ciudad cuyo nombre es de dos palabras por ejemplo "/buenos%20aires" la cual convertiremos en "buenos aires". De esta manera la API puede buscarla. Esa cosa rara del "/ /g" donde adentro esta el %20 sirve para reemplazar a todos los %20 que se encuentren, sin esto solamente reemplazaria al primero     		// ¿Cual es la función del if? Basicamente es preguntar si existe esa ciudad como palabra. En caso de ser true, se ejecuta lo de abajo. Esto es nesesario porque la página inicial su dominio es http://localhost:3000/, esto quiere decir que no hay existe una ciudad excrita, y si se ejecutara este esta funcion sin este if, esto me traeria errores  	
 			setLink((window.location.href.substring(window.location.href.lastIndexOf('/') + 1)).replace(/%20/g, ' '))
 		} 
 	}, [window.location.pathname]);
 	
 
 	
-
-
-
 
 	// _____Escala de temperatura:_____
 	const [temperatureScale, setTemperatureScale] = useState('C');				// Aquí puede haber 2 posibles valores. "Celsius" o "fahrenheit". Por defecto vamos a tener el valor de celsius 
@@ -355,7 +347,7 @@ function App() {
 	return (
 		<div className="App">
 			<Router>																		{/* Esto es parte del "react router". O sea, sirve para cambiar de link		// ¿Por que pongo dos rutas que muestran la misma página cuando esto se podria hacer con una sola? Basicamente esto me soluciona dos problemas. El primero es que cuando se renderizan nuevas imagenes, la pagina se recarga (así funcionan las descargas de links/imagenes) y esto me lleva al segundo error, el cual se va a activar la geolocalizacion automaticamente cuando se habra la página. Al tener una página principal, puedo hacer que solamente en esta se ejecute la geolocalizacion de forma automatica apenas habra la página (ya que solamente la página inicial tiene el props "autoGeolocation={getGeolocation}". y cuando seleccionemos una ciudad, se abrira una nueva página cuyo link tenda el nombre de la ciudad ej: "http://localhost:3000/salto" y se cargaran las imagenes de esta ciudad, ademas este segundo link no tiene la opcion de mostar la geolocalizacion de forma automatica devido a que no tiene el props autoGeolocation={getGeolocation} */}
-				<Route exact path="/clima/" render={() => {										{/* Esto es parte del "react router". O sea, sirve para cambiar de link.  Esta ruta representa la la página inicial. O sea, "http://localhost:3000/" */}																					
+				<Route exact path="/weather-app/" render={() => {										{/* Esto es parte del "react router". O sea, sirve para cambiar de link.  Esta ruta representa la la página inicial. O sea, "http://localhost:3000/" */}																					
 					return(
 						<div>
 							<WeatherFrecastpPage autoGeolocation={getGeolocation} menuActive={menuActive} ChangeMenuActive={ChangeMenuActive} cityName={cityName} setCityName={setCityName} cityInfo={cityInfo}  getGeolocation={getGeolocation} link={link} items={items} fetchingCity={fetchingCity} setLink={setLink} error={error} temperatureScale={temperatureScale} setTemperatureScale={setTemperatureScale} changeTemperature={changeTemperature}/>
@@ -363,7 +355,7 @@ function App() {
 					)}}>										
 				</Route>
 
-				<Route  path={`/clima/${link}`} render={() => {									{/* Lo mismo que lo anterior, pero en este caso la página de esta ruta representa depende la ciudad tipeada. Ejemplo: "http://localhost:3000/salto" */}
+				<Route  path={`/weather-app/${link}`} render={() => {									{/* Lo mismo que lo anterior, pero en este caso la página de esta ruta representa depende la ciudad tipeada. Ejemplo: "http://localhost:3000/salto" */}
 					return (
 						<div>
 							<WeatherFrecastpPage menuActive={menuActive} ChangeMenuActive={ChangeMenuActive} cityName={cityName} setCityName={setCityName} cityInfo={cityInfo}  getGeolocation={getGeolocation} link={link} items={items} fetchingCity={fetchingCity} setLink={setLink} error={error} temperatureScale={temperatureScale} setTemperatureScale={setTemperatureScale} changeTemperature={changeTemperature}/>										
