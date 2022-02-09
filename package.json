@@ -1,6 +1,6 @@
 {
-  "homepage": "https://Cosmfulanito.github.io/clima",	
-  "name": "clima",
+  "homepage": "https://NicolasLynch.github.io/weather-app",	
+  "name": "weather-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
