@@ -4,6 +4,8 @@ Check the weather and climatological information of the city you want.
 
 [Live version](https://nicolaslynch.github.io/weather-app/)
 
+![](https://nicolaslynch.github.io/portfolio/assets/images/weather-desktop.jpg)
+
 
 
 
@@ -54,7 +56,7 @@ For example:
 
 
 
-![](https://nicolaslynch.github.io/portfolio/assets/images/weather-desktop.jpg)
+
 
 
 
