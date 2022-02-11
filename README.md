@@ -36,7 +36,6 @@ Then change the value of the following constant to that of your "API key". This 
 Original value:
 > const apikey = 'e34c50149015d9cc83fa642bfdc582a1';
 
-
 Recommended change:
 > const apikey = (your API key);
 
@@ -45,7 +44,6 @@ Doing this is important because en the future I could delete my "API key"
 
 
 ## Important:
-
 
 For the page to work, the last directory in the URL must end with /weather-app/
 
