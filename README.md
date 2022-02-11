@@ -42,7 +42,13 @@ Doing this is important because en the future I could delete my "API key"
 
 
 
+## Important:
 
+
+For the page to work, the last directory in the URL must end in /weather-app/
+
+For example: 
+> http://localhost:3000/weather-app/
 
 
 
