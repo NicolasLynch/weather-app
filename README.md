@@ -29,7 +29,7 @@ Check the weather and climatological information of the city you want.
 ## Recommendations:
 
 It is recommended to create an account on [official page](https://openweathermap.org/) page of these APIs to receive a "API key" to access these. 
-Then change the value of the following constant to that of your "API key". This constant is located in the index.js file.
+Then change the value of the following constant to that of your "API key". This constant is located in the App.js file.
 
 Original value:
 > const apikey = 'e34c50149015d9cc83fa642bfdc582a1';
@@ -39,6 +39,9 @@ Recommended change:
 > const apikey = (your API key);
 
 Doing this is important because en the future I could delete my "API key"
+
+
+
 
 
 
