@@ -28,7 +28,13 @@ Check the weather and climatological information of the city you want.
 
 ## Recommendations:
 
-It is recommended to create an account on [official page](https://openweathermap.org/) page of these APIs to receive a code to access these.
+It is recommended to create an account on [official page](https://openweathermap.org/) page of these APIs to receive a "API key" to access these. Then change my "API key" to yours
+
+Doing this is important because it is possible that in the future my "Api key" will be deleted.
+
+
+
+
 
 
 
